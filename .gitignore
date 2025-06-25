@@ -6,6 +6,8 @@ tags
 docs/user/build
 docs/user/usingdakota/reference
 docs/user/usingdakota/samples
-.vscode
+.vscode/
 __pycache__
 *.pyc
+[Bb]uild
+.idea/
