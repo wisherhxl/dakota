@@ -15,6 +15,9 @@
                 "strategy": "set"
             },
             "cacheVariables": {
+                "CMAKE_POLICY_DEFAULT_CMP0148": "NEW",
+                "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+                "CMAKE_POLICY_DEFAULT_CMP0175": "OLD",
                 "BUILD_SHARED_LIBS": "False",
                 "CMAKE_Fortran_COMPILER": "C:/Program Files (x86)/Intel/oneAPI/compiler/2025.1/bin/ifx.exe",
                 "CMAKE_CXX_STANDARD": "17",
