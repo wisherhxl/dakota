@@ -1,0 +1,31 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "build\\generators\\CMakePresets.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "conan-dakota",
+            "inherits": "conan-default",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "BUILD_SHARED_LIBS": "False",
+                "CMAKE_Fortran_COMPILER": "C:/Program Files (x86)/Intel/oneAPI/compiler/2025.1/bin/ifx.exe",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_GENERATOR_PLATFORM": "x64",
+                "CMAKE_INSTALL_PREFIX": "",
+                "BLAS_LIBS": "C:/Program Files (x86)/Intel/oneAPI/mkl/latest/lib/mkl_core.lib",
+                "LAPACK_LIBS": "C:/Program Files (x86)/Intel/oneAPI/mkl/latest/lib/mkl_core.lib"
+            },
+            "environment": {
+                "PATH": "C:/Program Files (x86)/Intel/oneAPI/compiler/2025.1/bin;%PATH%"
+            }
+        }
+    ]
+}
