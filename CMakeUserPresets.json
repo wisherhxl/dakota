@@ -1,50 +1,50 @@
 {
-    "version": 4,
-    "vendor": {
-        "conan": {}
+  "version": 4,
+  "vendor": {
+    "conan": {}
+  },
+  "include": [
+    "build/generators/CMakePresets.json"
+  ],
+  "configurePresets": [
+    {
+      "name": "conan-dakota",
+      "inherits": "conan-default",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "CMAKE_POLICY_DEFAULT_CMP0148": "NEW",
+        "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+        "CMAKE_POLICY_DEFAULT_CMP0175": "OLD",
+        "BUILD_SHARED_LIBS": "False",
+        "CMAKE_Fortran_COMPILER": "C:/Program Files (x86)/Intel/oneAPI/compiler/2023.2.1/windows/bin/ifx.exe",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_GENERATOR_PLATFORM": "x64",
+        "CMAKE_INSTALL_PREFIX": "D:/git/installs/dakota",
+        "BLAS_LIBS": "C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/lib/intel64/mkl_intel_lp64.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/lib/intel64/mkl_sequential.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/lib/intel64/mkl_core.lib",
+        "LAPACK_LIBS": "C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/lib/intel64/mkl_intel_lp64.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/lib/intel64/mkl_sequential.lib;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/lib/intel64/mkl_core.lib"
+      },
+      "environment": {
+        "PATH": "C:/Program Files (x86)/Intel/oneAPI/compiler/2023.2.1/windows/bin;C:/Program Files (x86)/Intel/oneAPI/compiler/2023.2.1/windows/redist/intel64_win/compiler;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/bin/intel64;C:/Program Files (x86)/Intel/oneAPI/mkl/2023.2.0/redist/intel64;%PATH%"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "dakota-debug",
+      "configurePreset": "conan-dakota",
+      "displayName": "Build (Debug)",
+      "description": "Build the debug configuration.",
+      "configuration": "Debug"
     },
-    "include": [
-        "build\\generators\\CMakePresets.json"
-    ],
-    "configurePresets": [
-        {
-            "name": "conan-dakota",
-            "inherits": "conan-default",
-            "architecture": {
-                "value": "x64",
-                "strategy": "set"
-            },
-            "cacheVariables": {
-                "CMAKE_POLICY_DEFAULT_CMP0148": "NEW",
-                "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
-                "CMAKE_POLICY_DEFAULT_CMP0175": "OLD",
-                "BUILD_SHARED_LIBS": "False",
-                "CMAKE_Fortran_COMPILER": "C:/Program Files (x86)/Intel/oneAPI/compiler/2025.1/bin/ifx.exe",
-                "CMAKE_CXX_STANDARD": "17",
-                "CMAKE_GENERATOR_PLATFORM": "x64",
-                "CMAKE_INSTALL_PREFIX": "D:/git/installs/dakota",
-                "BLAS_LIBS": "C:/Program Files (x86)/Intel/oneAPI/mkl/latest/lib/mkl_core.lib",
-                "LAPACK_LIBS": "C:/Program Files (x86)/Intel/oneAPI/mkl/latest/lib/mkl_core.lib"
-            },
-            "environment": {
-                "PATH": "C:/Program Files (x86)/Intel/oneAPI/compiler/2025.1/bin;%PATH%"
-            }
-        }
-    ],
-    "buildPresets": [
-        {
-            "name": "dakota-debug",
-            "configurePreset": "conan-dakota",
-            "displayName": "Build (Debug)",
-            "description": "Build the debug configuration.",
-            "configuration": "Debug"
-        },
-        {
-            "name": "dakota-release",
-            "configurePreset": "conan-dakota",
-            "displayName": "Build (Release)",
-            "description": "Build the release configuration with optimizations.",
-            "configuration": "Release"
-        }
-    ]
+    {
+      "name": "dakota-release",
+      "configurePreset": "conan-dakota",
+      "displayName": "Build (Release)",
+      "description": "Build the release configuration with optimizations.",
+      "configuration": "Release"
+    }
+  ]
 }
